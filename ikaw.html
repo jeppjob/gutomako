@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gutom Ako</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h3>Gutom Ako</h3>
+        <ul>
+          <li><a href="index.html">San Kaen?</a></li>
+          <li>Ulam?(soon)</li>
+          <li>Meryenda?(soon)</li>
+          <li><a href="ikaw.html" class="active">Ikaw bahala..</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section style="z-index: 1;">
+        <div class="randomdiv">
+          <p id="randomfoodtext">Ikaw bahala maglagay ng pagpipiliaan.</p>
+          <div class="test">
+          <textarea name="userinput" id="userinput" autofocus placeholder="Enter choices here..." required></textarea>
+        </div>
+          <button id="spinbtn">SPIN</button>
+          <button id="pickbtn" disabled>PICK</button>
+        
+        </div>
+        <div class="showresult">
+          <div >
+              <h3 id="foodresult">Tada</h3>
+            <button id="searchfood">Find near me</button>
+            <button id="resetbtn">Spin Again</button>
+          </div>
+          
+
+        </div>
+      </section>
+      <div class="overlay"></div>
+    </main>
+    <script src="js/ikaw.js"></script>
+  </body>
+</html>

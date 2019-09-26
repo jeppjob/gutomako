@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css?family=Gayathri&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Gayathri", sans-serif;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+header {
+  width: 100%;
+position: absolute;
+  z-index: 2;
+}
+nav {
+  padding: 1.2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+nav h3{
+  font-size: 1.5rem;
+  padding-left: 1em;
+}
+nav ul{
+  padding: 0;
+  justify-self: center;
+  list-style: none;
+  justify-content: space-between
+}
+nav li {
+  display: inline;
+  padding: 0 .9em;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+nav a{
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+nav a:after{
+  content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #c40514;
+    border-radius: 15px;
+    width: 0%;
+  transition: width .5s;
+  }
+  nav a:hover::after{
+    width: 100%;
+  }
+.active{
+  position: relative;
+  font-weight: 600;
+  color: #c40514;
+}
+.active::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #c40514;
+  border-radius: 15px;
+  width: 100%;
+}
+.showresult {
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  width:60%;
+  margin: 0 auto;
+  padding: 2em;
+  border: 1px solid #c40514;
+  border-radius: 5px;
+background: #ffdf88;
+  display: none;
+  opacity:0;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  transition: opacity .5s linear 2s;
+}
+.showresult #foodresult {
+  color: #000;
+  font-size: 3.5rem;
+  width: 100%;
+  margin-bottom: .5em;
+}
+.overlay{
+  height: inherit;
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.94);
+  filter: blur(100%)
+}
+main {
+  background: url('/images/12804.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: inherit;
+}
+section {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.randomdiv {
+  text-align: center;
+  height: inherit;
+}
+.randomdiv button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  padding: 0.5em 1.5em;
+}
+button:hover {
+  cursor: pointer;
+}
+#randomfoodtext {
+  font-weight: 800;
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+#foodresult {
+  font-size: 3.5rem;
+}
+.category{
+  margin: 2em 0em;
+}
+/* Customize the label (the container) */
+.label {
+  position: relative;
+  padding-left: 35px;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #ff5f5f;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.label input:checked ~ .checkmark {
+  background-color: #27ae60;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.label .checkmark:after {
+  left: 11px;
+    top: 5px;
+    width: 8px;
+    height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.label .foodlist{
+  background: #f8bc13;
+  color: #000;
+  visibility: hidden;
+  width: 100%;
+  position: absolute;
+  top:-100%;
+  right:120%;
+  font-size: 1rem;
+  padding: 1em;
+  border-radius: 15px;
+}
+.label:nth-last-child(1) .foodlist{
+  left: 120%;
+}
+.label:hover .foodlist{
+  visibility: visible;
+}
+
+#spinbtn,#pickbtn{
+  background-color: #c40514;
+  
+}
+#spinbtn:disabled, #pickbtn:disabled{
+  background: #ccc;
+  cursor: wait;
+}
+
+#searchfood{
+  background: #c40514;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 1em;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+#resetbtn{
+  font-size: 1.2rem;
+  background: none;
+  border: 1px solid #c40514;
+  border-radius: 5px;
+  padding: 1em;
+  color: #c40514;
+}
+
+#userinput{
+  margin: 0 auto;
+  padding: .5em;
+  border-radius: 5px;
+  width: 350px;
+  height: 140px;
+  resize: none;
+  font-size: 1.3rem;
+  background: #ffedbb;
+}
+#userinput:focus{
+  outline: none;
+}
+@media only screen and (max-width: 768px){
+  nav{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  nav h3{
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+  }
+  nav ul{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+  }
+  nav li{
+    padding: 0;
+    font-size: 1rem;
+  }
+  #randomfoodtext{
+    font-size: 2.5rem;
+  }
+  .showresult{
+    width: 80%;
+  }
+  .showresult #foodresult{
+    font-size: 2rem;
+  }
+  .label{
+    font-size: 25px;
+  }
+  .checkmark{
+    height: 25px;
+    width: 25px;
+  }
+  .label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 7px;
+    height: 12px;
+  }
+}
+

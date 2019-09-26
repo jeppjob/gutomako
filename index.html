@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gutom Ako</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h3>Gutom Ako</h3>
+        <ul>
+          <li><a href="index.html" class="active">San Kaen?</a></li>
+          <li>Ulam?(soon)</li>
+          <li>Meryenda?(soon)</li>
+          <li><a href="ikaw.html">Ikaw bahala..</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section style="z-index: 1;">
+        <div class="randomdiv">
+          <p id="randomfoodtext">Select type of restaurant</p>
+          <div class="category">
+            <label class="label">
+              <input
+                type="checkbox"
+                name="foodcat"
+                value="fastfood"
+                id="check1"
+                checked
+              />Fast Food
+              <span class="checkmark"></span>
+              <span class="foodlist"
+                >Jollibee, KFC, Chowking, Greenwich, Pizza Hut, Yellow Cab,
+                Tokyo Tokyo, Goldilocks, Mang Inasal, Bon Chon, Tapa King,
+                Karate Kid, S&R, Popeyes, Wendy's, Tropical Hut</span
+              >
+            </label>
+            <label class="label">
+              <input
+                type="checkbox"
+                name="foodcat"
+                value="restaurant"
+                id="check2"
+                checked
+              />Casual Dining
+              <span class="checkmark"></span>
+              <span class="foodlist"
+                >Adobo Connection, Max's, Kuya J, Hukad, Gerry's Grill,
+                Giligans, Cabalen, Burgoo, Classic Savory, Hapchan, Kenny
+                Rogers, Mesa, Pancake House, Pepper Lunch, Racks, Shaykeys,
+                TGIFridays, North Park</span
+              >
+            </label>
+          </div>
+          <button id="spinbtn">SPIN</button>
+          <button id="pickbtn" disabled>PICK</button>
+        </div>
+        <div class="showresult">
+          <div >
+              <h3 id="foodresult">Tada</h3>
+            <button id="searchfood">Find near me</button>
+            <button id="resetbtn">Spin Again</button>
+          </div>
+          
+
+        </div>
+      </section>
+      <div class="overlay"></div>
+    </main>
+    <script src="js/santayokain.js"></script>
+  </body>
+</html>
