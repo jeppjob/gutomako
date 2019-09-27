@@ -272,6 +272,23 @@ button:hover {
 #userinput:focus{
   outline: none;
 }
+footer{
+  font-size: .8rem;
+  width: 100%;
+  position: fixed;
+  bottom:0;
+  display: flex;
+  justify-content: flex-end;
+  padding: .5em;
+}
+footer span{
+  color: #000;
+}
+footer a{
+  color: #c40514;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 768px){
   .label .foodlist{
     background: transparent;
