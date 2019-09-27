@@ -223,9 +223,11 @@ button:hover {
   font-size: 1rem;
   padding: 1em;
   border-radius: 15px;
+  overflow: hidden;
 }
 .label:nth-last-child(1) .foodlist{
   left: 120%;
+ 
 }
 .label:hover .foodlist{
   visibility: visible;
