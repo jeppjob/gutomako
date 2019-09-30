@@ -12,6 +12,10 @@ body {
   width: 100%;
   overflow: hidden;
 }
+button{
+  outline: none;
+  margin: .2em;
+}
 header {
   width: 100%;
 position: absolute;
@@ -287,6 +291,14 @@ footer span{
 footer a{
   color: #c40514;
   text-decoration: none;
+}
+#fb-share-button{
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  background: #3b5998;
+  color: #fff;
 }
 
 @media only screen and (max-width: 768px){
