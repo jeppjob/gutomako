@@ -13,9 +13,24 @@
       content="Food randomizer that helps people randomly choose what to eat. Let's you enter your own choices as well."
     />
     <title>Gutom Ako</title>
+    <meta property="og:url" content="https://gutomako.ml/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gutom Ako" />
+    <meta
+      property="og:description"
+      content="Don't know what or where to eat? Let our randomizer pick the food for you."
+    />
+    <meta property="og:image" content="https://gutomako.ml/images/bg-eat.jpg" />
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"
+    ></script>
     <header>
       <nav>
         <h3>Gutom Ako</h3>
@@ -48,12 +63,29 @@
             <h3 id="foodresult">Tada</h3>
             <button id="searchfood">Find near me</button>
             <button id="resetbtn">Spin Again</button>
+            <div
+              class="fb-share-button"
+              data-href="https://gutomako.ml/"
+              data-layout="button_count"
+              data-size="small"
+            >
+              <a
+                target="_blank"
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgutomako.ml%2F&amp;src=sdkpreparse"
+                class="fb-xfbml-parse-ignore"
+                >Share</a
+              >
+            </div>
           </div>
         </div>
       </section>
       <div class="overlay"></div>
     </main>
-    <footer> <a href="https://jeffcadampog.com" target="_blank">&#10084;<span> Jeff</span></a></footer>
+    <footer>
+      <a href="https://jeffcadampog.com" target="_blank"
+        >&#10084;<span> Jeff</span></a
+      >
+    </footer>
 
     <script src="js/ikaw.js"></script>
   </body>
